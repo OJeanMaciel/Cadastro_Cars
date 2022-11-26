@@ -1,0 +1,56 @@
+<form (ngSubmit)="submit()" [formGroup]="carsForm" #formDir="ngForm">
+  <div class="form-group">
+    <label for="marca_nome">Marca:</label>
+    <input type="text" placeholder="Coloque a marca do veículo" formControlName="marca_nome" required />
+    <div *ngIf="marca_nome.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="marca_nome.errors?.['required']">A marca é obrigatória.</p>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="nome_modelo">Modelo:</label>
+    <input type="text" placeholder="Coloque o Modelo" formControlName="nome_modelo" required />
+    <div *ngIf="nome_modelo.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="nome_modelo.errors?.['required']">O Modelo é obrigatório.</p>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="ano">Ano de Fabricação:</label>
+    <input type="number" placeholder="Coloque o ano de fabricaçao" formControlName="ano" required />
+    <div *ngIf="ano.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="ano.errors?.['required']">O Ano de Fabricação é obrigatório.</p>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="combustivel">Combustível:</label>
+    <input type="text" placeholder="Coloque o tipo de combustível" formControlName="combustivel" required />
+    <div *ngIf="combustivel.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="combustivel.errors?.['required']">O tipo de Combustível é obrigatório.</p>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="num_portas">num_portas:</label>
+    <input type="number" placeholder="Coloque a quantidade de portas" formControlName="num_portas" required />
+    <div *ngIf="num_portas.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="num_portas.errors?.['required']">A quantidade de portas é obrigatória.</p>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="valor_fipe">Fipe:</label>
+    <input type="number" placeholder="Coloque o valor da tabela Fipe" formControlName="valor_fipe" required />
+    <div *ngIf="valor_fipe.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="valor_fipe.errors?.['required']">O preço da tabela Fipe é obrigatória.</p>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="cor">Cor:</label>
+    <input type="text" placeholder="Coloque a cor do veículo" formControlName="cor" required />
+    <div *ngIf="cor.invalid && formDir.submitted" class="validation-error">
+      <p *ngIf="cor.errors?.['required']">A Cor do veículo é obrigatória.</p>
+  </div>
+</div>
+  <div class="form-group">
+    <label for="image">Coloque a foto que mais marcou:</label>
+    <input type="file" (change)="onFileSelected($event)"/>
+  </div>
+  <input type="submit" value="{{ btnText }}" >
+</form>
