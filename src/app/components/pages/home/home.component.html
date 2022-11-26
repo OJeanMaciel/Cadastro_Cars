@@ -1,1 +1,23 @@
-<p>Home</p>
+<div class="home-container">
+  <h1>Veja os nossos carros!</h1>
+  <div class="search-container">
+    <form>
+      <fa-icon [icon]="faSearch"></fa-icon>
+      <input type="text" placeholder="Busque por um Carro" (input)="search($event)">
+
+    </form>
+  </div>
+  <div *ngIf="carros.length > 0; else noCarros">
+    <div class="carros-container">
+      <div class="cars" *ngFor="let cars of carros">
+        <img src="{{baseApiUrl}}uploads/{{cars.image}}" alt="{{ cars.nome_modelo }}">
+        <h3>{{ cars.nome_modelo }}</h3>
+        <p class="date">Em: {{cars.created_at}}</p>
+        <p><a routerLink="carros/{{cars.id}}">Detalhes</a></p>
+      </div>
+    </div>
+  </div>
+  <ng-template #noCarros>
+    <h1>Não há carros cadastrados!</h1>
+  </ng-template>
+</div>

@@ -1,7 +1,10 @@
 import { CarsService } from './../../../services/cars.service';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Carros } from 'src/app/Carros';
+
+import { MessagesService } from 'src/app/services/messages.service';
 
 @Component({
   selector: 'app-formulario',
@@ -11,7 +14,7 @@ import { Carros } from 'src/app/Carros';
 export class FormularioComponent implements OnInit{
   btnText = "Salvar";
 
-  constructor(private carService: CarsService) {}
+  constructor(private carService: CarsService, private messagesService: MessagesService, private router: Router) {}
 
   ngOnInit(): void {
 
@@ -35,6 +38,8 @@ export class FormularioComponent implements OnInit{
 
     await this.carService.createCarro(formData).subscribe();
 
-  }
+    this.messagesService.add('Momento adicionado com sucesso!');
 
+    this.router.navigate(['/']);
+  }
 }

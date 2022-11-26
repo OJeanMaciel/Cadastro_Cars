@@ -12,6 +12,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { FormularioComponent } from './components/pages/formulario/formulario.component';
 import { CarsFormComponent } from './components/cars-form/cars-form.component';
+import { MessagesComponent } from './components/messages/messages.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CarroComponent } from './components/pages/carro/carro.component';
 
 @NgModule({
   declarations: [
@@ -20,14 +23,18 @@ import { CarsFormComponent } from './components/cars-form/cars-form.component';
     FooterComponent,
     HomeComponent,
     FormularioComponent,
-    CarsFormComponent
+    CarsFormComponent,
+    MessagesComponent,
+    CarroComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
