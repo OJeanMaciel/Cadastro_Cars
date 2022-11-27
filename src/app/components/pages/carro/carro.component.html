@@ -1,3 +1,22 @@
 <div class="carro" *ngIf="carro">
   <h1>{{ carro.marca_nome }}</h1>
+  <img src="{{baseApiUrl}}uploads/{{carro.image}}" alt="{{ carro.nome_modelo }}">
+  <div class="about-carro">
+    <h3>Sobre este carro:</h3>
+    <p>Modelo: {{ carro.nome_modelo }}</p>
+    <p>Ano: {{ carro.ano }}</p>
+    <p>Tipo: {{ carro.combustivel }}</p>
+    <p>Nº: {{ carro.num_portas }} portas</p>
+    <p>Valor: {{ carro.valor_fipe | currency : 'BRL' }}</p>
+    <p>Cor: {{ carro.cor }}</p>
+  </div>
+  <div class="actions">
+    <h3>Ações:</h3>
+    <a routerLink="/carros/edit/{{carro.id}}" class="edit-btn">
+      <fa-icon [icon]="faEdit"></fa-icon>Editar
+    </a>
+    <button class="remove-btn" (click)="removeHandler(carro.id!)">
+      <fa-icon [icon]="faTimes"></fa-icon>Excluir
+    </button>
+  </div>
 </div>

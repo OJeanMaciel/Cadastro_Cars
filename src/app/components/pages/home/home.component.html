@@ -4,7 +4,6 @@
     <form>
       <fa-icon [icon]="faSearch"></fa-icon>
       <input type="text" placeholder="Busque por um Carro" (input)="search($event)">
-
     </form>
   </div>
   <div *ngIf="carros.length > 0; else noCarros">
@@ -12,6 +11,7 @@
       <div class="cars" *ngFor="let cars of carros">
         <img src="{{baseApiUrl}}uploads/{{cars.image}}" alt="{{ cars.nome_modelo }}">
         <h3>{{ cars.nome_modelo }}</h3>
+        <p>Fipe: {{ cars.valor_fipe | currency : 'BRL' }} </p>
         <p class="date">Em: {{cars.created_at}}</p>
         <p><a routerLink="carros/{{cars.id}}">Detalhes</a></p>
       </div>

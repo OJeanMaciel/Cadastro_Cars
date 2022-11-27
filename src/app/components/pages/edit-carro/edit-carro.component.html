@@ -1,0 +1,8 @@
+<div *ngIf="carros">
+  <h2>Editando o Carro <span>{{ carros.nome_modelo }}</span>!</h2>
+  <app-cars-form
+  (onSubmit)="editHandler($event)"
+  [carrosData]="carros"
+  [btnText]="btnText"
+  ></app-cars-form>
+</div>

@@ -10,8 +10,9 @@ import { Carros } from './../../Carros';
   styleUrls: ['./cars-form.component.css']
 })
 export class CarsFormComponent implements OnInit {
-  @Output() onSubmit = new EventEmitter<Carros>()
+  @Output() onSubmit = new EventEmitter<Carros>();
   @Input() btnText!: string;
+  @Input() carrosData: Carros | null = null;
 
   carsForm!: FormGroup;
 
@@ -19,14 +20,14 @@ export class CarsFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.carsForm = new FormGroup({
-      id: new FormControl(''),
-      marca_nome: new FormControl('', [Validators.required]),
-      nome_modelo: new FormControl('', [Validators.required]),
-      ano: new FormControl('', [Validators.required]),
-      combustivel: new FormControl('', [Validators.required]),
-      num_portas: new FormControl('', [Validators.required]),
-      valor_fipe: new FormControl('', [Validators.required]),
-      cor: new FormControl('', [Validators.required]),
+      id: new FormControl(this.carrosData ? this.carrosData.id:''),
+      marca_nome: new FormControl(this.carrosData ? this.carrosData.marca_nome: '', [Validators.required]),
+      nome_modelo: new FormControl(this.carrosData ? this.carrosData.nome_modelo: '', [Validators.required]),
+      ano: new FormControl(this.carrosData ? this.carrosData.ano: '', [Validators.required]),
+      combustivel: new FormControl(this.carrosData ? this.carrosData.combustivel: '', [Validators.required]),
+      num_portas: new FormControl(this.carrosData ? this.carrosData.num_portas: '', [Validators.required]),
+      valor_fipe: new FormControl(this.carrosData ? this.carrosData.valor_fipe: '', [Validators.required]),
+      cor: new FormControl(this.carrosData ? this.carrosData.cor: '', [Validators.required]),
       image: new FormControl(''),
     });
   }

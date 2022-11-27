@@ -38,7 +38,7 @@ export class FormularioComponent implements OnInit{
 
     await this.carService.createCarro(formData).subscribe();
 
-    this.messagesService.add('Momento adicionado com sucesso!');
+    this.messagesService.add('Carro adicionado com sucesso!');
 
     this.router.navigate(['/']);
   }

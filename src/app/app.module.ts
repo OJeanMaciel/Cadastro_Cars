@@ -15,6 +15,7 @@ import { CarsFormComponent } from './components/cars-form/cars-form.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CarroComponent } from './components/pages/carro/carro.component';
+import { EditCarroComponent } from './components/pages/edit-carro/edit-carro.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { CarroComponent } from './components/pages/carro/carro.component';
     FormularioComponent,
     CarsFormComponent,
     MessagesComponent,
-    CarroComponent
+    CarroComponent,
+    EditCarroComponent
 
   ],
   imports: [

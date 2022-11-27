@@ -21,13 +21,12 @@
 .cars {
   width: 32%;
   margin-bottom: 1em;
-  text-aling: center;
+  text-align: center;
 }
 
 .cars img {
   border-radius: 1em;
   width: 100%;
-  heigth: 50%;
   margin-bottom: 1em;
 }
 
